@@ -5,8 +5,11 @@ var map1 = new Map([["1" , "8"], ["2" ,"7" ] ,["3", "15"],["4" , "20"], ["5" ,"3
   
 
 
-app.get('/delay/:flightId',(req,res)=>{
-    var id = req.params.flightId;
+app.get('/delay/:params',(req,res)=>{       // params include flight id and time stamp
+    var params = req.params.params.split(',');
+    console.log(params);
+    var id = params[0];
+    var timestamp = params[1];          //not used anywhere becuase the data is hardcoded
     if(map1.has(id))
     {
         console.log(map1.get(id));
