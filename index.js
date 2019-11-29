@@ -5,7 +5,7 @@ var map1 = new Map([["1" , "8"], ["2" ,"7" ] ,["3", "15"],["4" , "20"], ["5" ,"3
   
 
 
-app.get('/:flightId',(req,res)=>{
+app.get('/delay/:flightId',(req,res)=>{
     var id = req.params.flightId;
     if(map1.has(id))
     {
@@ -19,6 +19,10 @@ app.get('/:flightId',(req,res)=>{
     else{
         res.send({'status': 'not found'});
     }
+})
+
+app.get('/',(req,res)=>{
+    res.send('Flight delay api server with hardcoded values ["1" , "8"], ["2" ,"7" ] ,["3", "15"],["4" , "20"], ["5" ,"35" ] ,["6", "25"] ');
 })
 
 var port = process.env.PORT || 8080;
