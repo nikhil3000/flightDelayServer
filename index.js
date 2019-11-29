@@ -21,7 +21,7 @@ app.get('/:flightId',(req,res)=>{
     }
 })
 
-var port = process.env.port || 5000;
+var port = process.env.PORT || 8080;
 
 app.listen(port,()=>{
     console.log("listening at port" + port);
